@@ -2,26 +2,26 @@
 
 require_relative "tosh_palindrome/version"
 
-class String
+module ToshPalindrome
 
   # Returns true for a palindrome, false otherwise.
   def palindrome?
-    # processed_content == processed_content.reverse
-    letters == letters.reverse
+   processed_content == processed_content.reverse
   end
 
 
   private
 
-    # Returns content for palindrome testing.
-    # def processed_content
-    #   self.letters.downcase
-    # end
-
     # returns the letters of a string
-    def letters
-      # self.chars.select {|character| character.match(/[a-z]/i)}.join
-      # self.scan(/[a-z]i).join.downcase
-      scan(/[a-z]/i).join.downcase
+    def processed_content
+      to_s.scan(/[a-z\d]/i).join.downcase
     end
+end
+
+class String
+  include ToshPalindrome
+end
+
+class Integer
+  include ToshPalindrome
 end
