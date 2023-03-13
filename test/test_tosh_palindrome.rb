@@ -6,6 +6,7 @@ class TestToshPalindrome < Minitest::Test
  
   def test_non_palindrome
     refute "apple".palindrome?
+    refute "".palindrome?
   end
 
   def test_literal_palindrome

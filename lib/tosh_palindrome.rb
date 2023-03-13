@@ -6,7 +6,7 @@ module ToshPalindrome
 
   # Returns true for a palindrome, false otherwise.
   def palindrome?
-   processed_content == processed_content.reverse
+   processed_content == processed_content.reverse unless processed_content.empty?
   end
 
 
